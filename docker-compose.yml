@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  app:
+    image: fastapi-streamlit-app
+    build: .
+    ports:
+      - "8000:8000"
+      - "8501:8501"
+    environment:
+      RAG_ENDPOINT: http://localhost:8000/rag
+      CLASSIFICATION_ENDPOINT: http://localhost:8000/classification
+      OPENAI_API_KEY: 'sk-proj-wBI3er6WVbnZbMF0KX2gT3BlbkFJHqsQdKjkdGMGWjfWR0qG'
